@@ -44,21 +44,31 @@ def index():
     db.session.commit()
     return redirect(url_for('index'))
 
-@app.route("/game", methods=["GET", "POST"])
-def game():
+@app.route("/createGame", methods=["GET"])
+def creategame():
     if request.method == "GET":
         return render_template("createGame.html")
 
-    result = request.form
-    gameName = result["gamename"]
-    playerOne = result["playerone"]
-    playerTwo = result["playertwo"]
-    new_game = Game(game_name=request.form["gamename"], player_one_name = request.form["playerone"], player_two_name = request.form["playertwo"], score = 0)
-    #new_game = Game('top game', 'sean', 'echo')
-    db.session.add(new_game)
-    db.session.commit()
 
-    return redirect(url_for('game'))
+@app.route("/newgame", methods=['GET', 'POST'])
+def game():
+
+        if request.method == "GET":
+            return render_template("new_game.html")
+        new_game = Game(game_name=request.form["gamename"], player_one_name = request.form["playerone"], player_two_name = request.form["playertwo"], score = 0)
+        db.session.add(new_game)
+        db.session.commit()
+        gameid = str(new_game.id)
+        return render_template("new_game.html", gameid = gameid)
+
+
+
+
+
+
+
+
+
 
 
 
