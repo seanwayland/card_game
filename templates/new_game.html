@@ -6,6 +6,7 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
         <title>My scratchboard page</title>
+        <script src="{{ url_for('static', filename='javascript/war.js') }}"></script>
     </head>
 
     <body>
@@ -18,7 +19,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">My scratchpad</a>
+                    <a class="navbar-brand" href="#">WAR CARDGAME</a>
                 </div>
             </div>
         </nav>
@@ -27,14 +28,20 @@
     console.log('hi')
 </script>
 
+<A href="/">Home Page</A>
 
         <div class="container">
             <p> Welcome to the new game </p>
-            <p> {{ gameid }}</p>
+            <p> Game ID: {{ gameid }}</p>
+            <p> Game Name: {{ gamename }}</p>
+            <p> Player One: {{ playeronename }}</p>
+            <p> Player Two: {{ playertwoname }}</p>
                 </div>
+
+            <button onclick="deal()">Deal Cards</button>
+            <button onclick="play()">Play Hand</button>
 
 
         </div><!-- /.container -->
     </body>
 </html>
-
