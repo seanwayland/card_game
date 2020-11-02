@@ -18,13 +18,21 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">My scratchpad</a>
+                    <a class="navbar-brand" href="#">WAR CARDGAME</a>
                 </div>
             </div>
         </nav>
+        <div>
+        <A href="/createGame">Click to create a new Game!</A>
+        </div>
+        <div>
+        <A href="/scores" target="_blank" >Scores and game history</A>
+        </div>
 
 
         <div class="container">
+            <h3>REVIEWS</h3>
+            <BR>
             {% for comment in comments %}
                 <div class="row">
                     {{ comment.content }}
@@ -33,8 +41,8 @@
 
             <div class="row">
                 <form action="." method="POST">
-                    <textarea name="contents" placeholder="Enter a comment" class="form-control"></textarea>
-                    <input type="submit" class="btn btn-success" value="Post comment">
+                    <textarea name="contents" placeholder="Leave a Review!" class="form-control"></textarea>
+                    <input type="submit" class="btn btn-success" value="Leave a review">
                 </form>
             </div>
 

@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
         <title>My scratchboard page</title>
         <script src="{{ url_for('static', filename='javascript/war.js') }}"></script>
+        <script src="{{ url_for('static', filename='javascript/vars.js') }}"></script>
+        <script src="{{ url_for('static', filename='javascript/functions.js') }}"></script>
     </head>
 
     <body>
@@ -38,9 +40,27 @@
             <p> Player Two: {{ playertwoname }}</p>
                 </div>
 
-            <button onclick="deal()">Deal Cards</button>
-            <button onclick="play()">Play Hand</button>
+            <div id="content"></div>
 
+            <button id = "deal" onclick="deal()">Deal Cards</button>
+            <button id = "play" onclick="play()">Play Hand</button>
+
+                <div id ="save" class="container">
+                <div class="row">
+                <form id = "saveform" action="/savegame" method="POST">
+
+                    <textarea id = "winner" class="form-control" name="thewinner" placeholder="Enter Winner"></textarea>
+                    <textarea id = "score" class="form-control" name="thescore" placeholder="Score"></textarea>
+                    <label for="gameid">Enter ID shown below and select Save Game:</label><br>
+                    <textarea  id = "gameid" class ="form-control" name ="gameid" placeholder = {{ gameid }} value = {{ gameid }} ></textarea>
+                    <input type="submit" class="btn btn-success" value="Save Game">
+                </form>
+            </div>
+
+<script>
+document.getElementById("saveform").style.visibility = "hidden";
+
+</script>
 
         </div><!-- /.container -->
     </body>
