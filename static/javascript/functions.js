@@ -234,7 +234,7 @@ shuffle(hand_two);
 
                           }
 
-// print to deal to browser
+// print the deal to browser
 var div = document.getElementById("content");
 div.innerHTML = "";
 div.innerHTML += "HAND ONE";
