@@ -5,7 +5,9 @@ https://bicyclecards.com/how-to-play/war/
 
 Game is hosted here : 
 
-seanwayland.pythonanywhere.com
+
+
+http://seanwayland.pythonanywhere.com
 
 login : cardgame
 password : holdem 
